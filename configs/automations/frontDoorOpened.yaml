@@ -1,0 +1,27 @@
+- alias: 'Front Door Opened At Night'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.front_door_state
+    to: 'on'
+  condition:
+    - condition: sun
+      after: sunset
+      after_offset: "-0:20:00"
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.porch_light_switch
+
+- alias: 'Front Door Closed At Night'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.front_door_state
+    to: 'off'
+    for:
+      minutes: 3
+  condition:
+    - condition: sun
+      after: sunset
+      after_offset: "-0:20:00"
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.porch_light_switch

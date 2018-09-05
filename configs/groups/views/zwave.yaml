@@ -1,0 +1,27 @@
+#Zwave View
+#
+zwave:
+  name: ZWave
+  control: hidden
+  view: yes
+  entities:
+    - zwave.aeotec_zw090_zstick_gen5_us
+    - zwave.bedroom_fan
+    - zwave.bedroom_light
+    - zwave.outlet_1
+    - zwave.outlet_2
+    - zwave.thermostat
+    - zwave.guest_room_light
+    - zwave.porch_light
+    - zwave.basement_sensor
+    - zwave.entryway_sensor
+    - zwave.garage_sensor
+    - zwave.garage_door
+    - zwave.main_floor_sensor
+    - zwave.entryway_smoke_detector
+    - zwave.basement_smoke_detector
+    - zwave.upstairs_smoke_detector
+    - zwave.front_door
+    - zwave.kitchen_door
+    - group.battery_sensor_group
+    - group.test_stuff

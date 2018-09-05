@@ -1,0 +1,16 @@
+#Automation to Alert if the house gets too cold
+#This should only trigger if the furnace is broken
+- alias: 'House too COLD'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.thermostat_temperature
+    below: '60'
+  action:
+    - service: notify.notify
+      data_template:
+        title: Check the Furnace
+        message: >
+          House Temperature is too cold
+
+          Current Temp: {{ states.sensor.thermostat_temperature.state }}
+        target: [!secret adminPhone, !secret userPhone]

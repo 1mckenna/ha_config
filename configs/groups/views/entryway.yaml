@@ -1,0 +1,8 @@
+#Entryway View
+#
+entryway:
+  name: Entryway
+  view: yes
+  entities:
+    - switch.porch_light_switch      
+    - group.entryway_sensor_group

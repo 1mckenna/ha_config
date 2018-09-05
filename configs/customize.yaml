@@ -1,0 +1,146 @@
+  sensor.basement_sensor_luminance:
+    friendly_name: Basement Luminance
+    icon: mdi:brightness-6
+  sensor.basement_sensor_relative_humidity:
+    friendly_name: Basement Relative Humidity
+    icon: mdi:water-percent
+  sensor.basement_sensor_temperature:
+    friendly_name: Basement Temperature
+  sensor.main_floor_sensor_temperature:
+    friendly_name: Main Floor Temperature
+  sensor.main_floor_sensor_luminance:
+    friendly_name: Main Floor Luminance
+    icon: mdi:brightness-6
+  sensor.main_floor_sensor_relative_humidity:
+    friendly_name: Main Floor Relative Humidity
+    icon: mdi:water-percent
+  sensor.entryway_sensor_temperature:
+    friendly_name: Entryway Temperature
+  sensor.entryway_sensor_luminance:
+    friendly_name: Entryway Luminance
+    icon: mdi:brightness-6
+  sensor.entryway_sensor_relative_humidity:
+    friendly_name: Entryway Relative Humidity
+    icon: mdi:water-percent
+  sensor.garage_sensor_luminance:
+    friendly_name: Garage Luminance
+    icon: mdi:brightness-6
+  sensor.garage_sensor_relative_humidity:
+    friendly_name: Garage Relative Humidity
+    icon: mdi:water-percent
+  sensor.garage_sensor_temperature:
+    friendly_name: Garage Temperature
+  sensor.marilyn_status:
+    friendly_name: Marilyn
+  sensor.plant_name:
+    icon: mdi:flower
+  sensor.marilyn_moisture:
+    icon: mdi:water-percent
+  climate.thermostat_heating_1:
+    friendly_name: Heating
+  climate.thermostat_cooling_1:
+    friendly_name: Cooling
+  switch.outlet_1_switch:
+    friendly_name: Main Level Outlet 1
+  switch.outlet_2_switch:
+    friendly_name: Main Level Outlet 2
+  fan.bedroom_fan_level:
+    friendly_name: Bedroom Fan
+  cover.garage_door_barrier_state_label:
+    friendly_name: Garage Door
+  group.all_switches:
+    hidden: false
+    friendly_name: Switches
+  group.all_covers:
+    hidden: false
+    friendly_name: Garage Door Opener
+  group.all_fans:
+    hidden: false
+    friendly_name: Fans
+  group.all_devices:
+    hidden: false
+    friendly_name: Users
+  group.all_lights:
+    hidden: false
+    friendly_name: Smart Bulbs
+  group.all_automations:
+    hidden: false
+    friendly_name: Automations
+#Battery Alert
+  group.battery_alert:
+    friendly_name: "Battery Alert"
+    icon: mdi:steam
+  automation.battery_notification:
+    friendly_name: "Battery Notification"
+    icon: mdi:comment-alert-outline
+  automation.battery_notification_clear:
+    friendly_name: "Battery Notification Clear"
+    icon: mdi:comment-remove-outline
+  automation.battery_alert_html5:
+    friendly_name: "Battery HTML5 Notification"
+    icon: mdi:comment-alert-outline
+  automation.battery_sensor_from_battery_level_attribute:
+    friendly_name: "Battery Sensor from battery_level Attribute"
+    icon: mdi:battery-alert
+  automation.battery_sensor_from_battery_attribute:
+    friendly_name: "Battery Sensor from battery Attribute"
+    icon: mdi:battery-alert
+  automation.battery_sensor_from_battery_numeric_attribute:
+    friendly_name: "Battery Sensor from battery numeric Attribute"
+    icon: mdi:battery-alert
+    initial_state: 'on'
+ #ALARM
+  sensor.wakeup_alarm_time:
+    icon: mdi:timer
+  sensor.wakeup_fadein_duration:
+    icon: mdi:timer
+  sensor.wakeup_start_time_lights:
+    icon: mdi:timer
+ #SMOKE Detectors
+  sensor.basement_smoke_co2:
+    friendly_name: "Basement Smoke Detector"          
+  sensor.upstairs_smoke_co2:
+    friendly_name: "Upstairs Smoke Detector"          
+  sensor.entryway_smoke_co2:
+    friendly_name: "Entryway Smoke Detector"
+  #TAB Ordering
+  group.basement:
+    order: 1
+  group.entryway:
+    order: 2
+  group.mainlevel:
+    order: 3
+  group.bedroom:
+    order: 4
+  group.guestroom:
+    order: 5
+  group.office:
+    order: 6
+  group.garage:
+    order: 7
+  group.plants:
+    order: 8
+  group.climate:
+    order: 9
+  group.automations:
+    order: 10
+  group.zwave:
+    order: 11
+  light.bedroom_lamps:
+    icon: mdi:lamp
+  light.guest_bedroom_lamp:
+    friendly_name: "Guest Room Lamp"
+    icon: mdi:lamp
+  light.office_lamp:
+    icon: mdi:lamp
+  device_tracker.galaxynote9:
+    icon: mdi:account-heart
+  binary_sensor.washing_machine:
+    icon: mdi:washing-machine
+  binary_sensor.dryer_running:
+    icon: mdi:tumble-dryer
+  binary_sensor.dryer_cooldown:
+    icon: mdi:tumble-dryer
+#Hide Door Switch
+  switch.kitchen_door_switch:
+    hidden: true

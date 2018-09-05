@@ -1,0 +1,17 @@
+#Convenience Automation Group
+convenience_autos_group:
+  name: Convenience
+  control: hidden
+  view: no
+  entities:
+    - automation.front_door_opened_at_night
+    - automation.front_door_closed_at_night
+    - automation.turn_off_main_floor_lights_10_minutes_after_last_movement
+    - automation.turn_on_main_floor_lights_when_there_is_movement
+    - automation.wakeup_light_bedroom
+    - automation.night_mode
+    - automation.ride_motorcycle
+    - automation.washer_cycle_complete
+    - automation.dryer_cooldown_mode
+    - automation.drying_cycle_complete
+    - automation.turn_off_laundry_switches

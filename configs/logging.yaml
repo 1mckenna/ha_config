@@ -1,0 +1,9 @@
+#####################
+#LOGGING.yaml       #
+#####################
+
+#enabling logging for troubleshooting
+  default: error
+  logs:
+    homeassistant.components.http.ban: warning
+    #homeassistant.components.mqtt: debug

@@ -1,0 +1,35 @@
+  #Master Bedroom Smart Bulb
+- platform: mqtt_json
+  name: 'Bedroom Lamps'
+  state_topic: light/Bedroom
+  command_topic: light/Bedroom/set
+  color_temp: true
+  brightness: true
+  rgb: true
+  white_value: true
+  effect: false
+  optimistic: false
+  
+  #Guest Bedroom Smart Bulb
+- platform: mqtt_json
+  name: 'Guest Bedroom Lamp'
+  state_topic: light/Guest
+  command_topic: light/Guest/set
+  color_temp: true
+  brightness: true
+  rgb: true
+  white_value: true
+  effect: false
+  optimistic: false
+  
+  #Office Smart Bulb
+- platform: mqtt_json
+  name: 'Office Lamp'
+  state_topic: light/Office
+  command_topic: light/Office/set
+  color_temp: true
+  brightness: true
+  rgb: true
+  white_value: true
+  effect: false
+  optimistic: false

@@ -1,0 +1,38 @@
+#Automation to send notification to phones about weather to help determine if the motorcycle should be ridden
+#Alerts are sent at sunrise during the week when someone is home if the temp is above 45 at sunrise and change of rain is less than 40%
+- alias: 'Ride Motorcycle'
+  hide_entity: false
+  trigger:
+    platform: time
+    at: '5:30'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.all_devices
+        state: 'home'
+      - condition: numeric_state
+        entity_id: sensor.pws_precip_1d
+        below: '40'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        above: '45'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+  action:
+    service: notify.notify
+    data_template:
+      title: Ride the Motorcycle Today
+      message: >
+        Precipitation Chance: {{ states.sensor.pws_precip_1d.state }}%
+
+        High Today: {{ states.sensor.pws_temp_high_1d_f.state }}
+
+        Current Temperature: {{ states.sensor.pws_temp_f.state }} 
+      target: [!secret adminPhone, !secret userPhone]
+

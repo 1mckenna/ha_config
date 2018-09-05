@@ -1,0 +1,15 @@
+  include:
+    domains:
+      - automation
+      - light
+      - switch
+      - fan
+      - cover
+  exclude:
+    entities:
+      - automation.battery_sensor_from_battery_attribute
+      - automation.battery_sensor_from_battery_numeric_attribute
+      - automation.battery_sensor_from_battery_level_attribute
+      - automation.battery_notification_clear
+      - automation.battery_notification
+      - automation.battery_alert_html5

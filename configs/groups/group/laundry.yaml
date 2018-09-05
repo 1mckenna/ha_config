@@ -1,0 +1,10 @@
+#Laundry Group
+laundry:
+  name: Laundry
+  control: hidden
+  view: no
+  entities:
+    - binary_sensor.washing_machine
+    - binary_sensor.dryer_running
+    - binary_sensor.dryer_cooldown
+    - binary_sensor.dryer_door

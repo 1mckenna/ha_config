@@ -1,0 +1,27 @@
+#TURN OFF EVERYTHING WHEN WE LEAVE THE HOUSE
+- alias: 'Away Mode'
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    to: 'not_home'
+  condition:
+    condition: state
+    entity_id: group.laundry
+    state: 'off'
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.all_fans,group.all_switches,group.all_lights
+
+#DONT TURN OFF LAUNDRY IF IT WAS ON WHEN WE LEFT HOME    
+- alias: 'Laundry Away Mode'
+  trigger:
+    platform: state
+    entity_id: group.all_devices
+    to: 'not_home'
+  condition:
+    condition: state
+    entity_id: group.laundry
+    state: 'on'
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.all_fans,group.all_lights,switch.bedroom_light_switch,switch.guest_room_light_switch,switch.outlet_1_switch,switch.outlet_2_switch,switch.porch_light_switch

@@ -1,0 +1,6 @@
+#influxdb:
+  host: !secret influx_host
+  database: home_assistant
+  username: !secret influxUser
+  password: !secret influxPass
+  default_measurement: state

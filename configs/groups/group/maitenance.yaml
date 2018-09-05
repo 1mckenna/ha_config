@@ -1,0 +1,13 @@
+#Maitenance Automation Group
+maitenance_autos_group:
+  name: Maitenance
+  control: hidden
+  view: no
+  entities:
+    - automation.furnace_filter_reminder
+    - automation.house_too_cold
+    - automation.plants_need_water
+    - automation.recycling_day_reminder
+    - automation.trash_day_reminder
+    - automation.mqtt_lights_keepalive_on
+    - automation.mqtt_lights_keepalive_off

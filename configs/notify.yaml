@@ -1,0 +1,28 @@
+  - name: notify
+    platform: html5
+    gcm_api_key: !secret gcm_api_key
+    gcm_sender_id: !secret gcm_sender_id
+
+  - platform: group
+    name: admin_phone
+    services:
+      - service: notify
+        data:
+          target: !secret adminPhone
+
+  - platform: group
+    name: user_phone
+    services:
+      - service: notify
+        data:
+          target: !secret userPhone
+
+  - platform: group
+    name: both_phones
+    services:
+      - service: notify
+        data:
+          target: !secret adminPhone
+      - service: notify
+        data:
+          target: !secret userPhone

@@ -1,0 +1,9 @@
+  - platform: asuswrt
+    host: !secret routerIP
+    username: !secret routerUN
+    protocol: ssh
+    port: 22
+    ssh_key: !secret routerKey
+    new_device_defaults:
+      track_new_devices: false
+      hide_if_away: false

@@ -1,0 +1,16 @@
+#Basement Group
+basment_sensor_group:
+  name: Basement Sensors
+  control: hidden
+  view: no
+  entities:
+    - binary_sensor.game_room_main_door_state
+    - binary_sensor.game_room_main_door_tamper
+    - binary_sensor.game_room_side_door_state
+    - binary_sensor.game_room_side_door_tamper
+    - sensor.basement_sensor_luminance
+    - sensor.basement_sensor_relative_humidity
+    - sensor.basement_sensor_temperature
+    - binary_sensor.basement_multisensor_motion
+    - binary_sensor.basement_multisensor_tamper 
+    - sensor.basement_multisensor_batterylevel

@@ -1,0 +1,12 @@
+#Main Floor View
+#
+mainlevel:
+  name: Main Floor
+  control: hidden
+  view: yes
+  entities:
+    - media_player.main_floor_home
+    - switch.outlet_1_switch
+    - switch.outlet_2_switch
+    - group.mainfloor_sensor_group
+    - group.entryway_sensor_group

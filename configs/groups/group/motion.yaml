@@ -1,0 +1,10 @@
+#Motion Group
+motion_sensors:
+  name: Motion Sensors
+  control: hidden
+  view: no
+  entities:
+    - binary_sensor.garage_multisensor_motion 
+    - binary_sensor.entryway_multisensor_motion
+    - binary_sensor.mainfloor_multisensor_motion
+    - binary_sensor.basement_multisensor_motion

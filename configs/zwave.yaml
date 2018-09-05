@@ -1,0 +1,5 @@
+  usb_path: /dev/ttyACM0
+  config_path: /usr/local/lib/python3.6/site-packages/python_openzwave/ozw_config/
+  debug: false
+  network_key: !secret zwave_key
+  polling_interval: 45000

@@ -1,0 +1,8 @@
+# Garage View
+#
+garage:
+  name: Garage
+  view: yes
+  entities:
+    - group.garage_sensor_group
+    - cover.garage_door_barrier_state_label

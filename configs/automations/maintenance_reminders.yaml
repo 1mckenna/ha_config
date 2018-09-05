@@ -1,0 +1,70 @@
+#TRASH DAY REMINDER
+- alias: Trash Day Reminder
+  trigger:
+    - platform: state
+      entity_id: group.all_devices
+      to: 'home'
+    - platform: time
+      at: '16:00'
+  condition:
+    - condition: state
+      entity_id: group.all_devices
+      state: 'home'
+    - condition: time
+      after: '16:00'
+    - condition: time
+      weekday:
+        - tue
+    - condition: template
+      value_template: '{{ ((now().strftime("%W") | int) % 2) == 0 }}'
+  action:
+    service: notify.notify
+    data:
+      title: "Trash Day"
+      message: "Take the trash to the curb"
+      target: [!secret adminPhone, !secret userPhone]
+
+#RECYCLING DAY REMINDER
+- alias: Recycling Day Reminder
+  trigger:
+    - platform: state
+      entity_id: group.all_devices
+      to: 'home'
+    - platform: time
+      at: '16:00'
+  condition:
+    - condition: state
+      entity_id: group.all_devices
+      state: 'home'
+    - condition: time
+      after: '16:00'
+    - condition: time
+      weekday:
+        - tue
+    - condition: template
+      value_template: '{{ ((now().strftime("%W") | int) % 2) == 1 }}'
+  action:
+    service: notify.notify
+    data:
+      title: "Trash & Recycling Day"
+      message: "Take the trash and recycling to the curb"
+      target: [!secret adminPhone, !secret userPhone]
+
+#FURNACE FILETER REMINDER ON FIRST DAY OF EACH MONTH
+- alias: "Furnace Filter Reminder"
+  trigger:
+    platform: sun
+    event: sunrise
+  condition:
+    condition: template
+    value_template: '{{ now().day == 1}}'
+  action:
+    - service: notify.notify
+      data:
+        title: "Check Furnace Filter and Replace if Needed"
+        message: "Furnace filter is 16x25x1 if you need to buy one"
+        target: !secret adminPhone
+    - service: persistent_notification.create
+      data:
+        title: "Check Furnace Filter and Replace if Needed"
+        message: "Furnace filter is 16x25x1 if you need to buy one"

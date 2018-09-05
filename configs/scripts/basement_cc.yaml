@@ -1,0 +1,16 @@
+#Change to ChromeCast Media settings for basement TV
+  basement_cc:
+    sequence:
+     - service: media_player.turn_on
+       entity_id: media_player.basement_tv
+     - service: media_player.turn_on
+       entity_id: media_player.txrz800
+     - service: media_player.select_source
+       data:
+         entity_id: media_player.txrz800
+         source: 'Basement Chromecast'
+     - service: media_player.volume_set
+       data:
+         entity_id: media_player.txrz800
+         volume_level: .5625
+       

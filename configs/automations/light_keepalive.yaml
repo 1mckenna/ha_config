@@ -1,0 +1,17 @@
+#Turn on MQTT Lights once a day at 10am to keep them connected to Wifi
+- alias: MQTT Lights KeepAlive ON
+  trigger:
+    - platform: time
+      at: '10:00'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: group.all_lights
+
+#Turn off MQTT Lights once a day after lights turn on at 10am
+- alias: MQTT Lights KeepAlive OFF
+  trigger:
+    - platform: time
+      at: '10:05'
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.all_lights

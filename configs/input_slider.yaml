@@ -1,0 +1,49 @@
+  #ALARM CLOCK
+  wakeup_hour:
+    name: Hour
+    icon: mdi:clock-in
+    initial: 6
+    min: 0
+    max: 23
+    step: 1
+  
+  wakeup_minutes:
+    name: Minutes
+    icon: mdi:clock-in
+    initial: 00
+    min: 0
+    max: 55
+    step: 5
+  
+  wakeup_duration:
+    name: Fade Time
+    icon: mdi:clock-in
+    initial: 30
+    min: 5
+    max: 60
+    step: 5
+
+  wakeup_delay:
+    name: Overhead Delay
+    icon: mdi:clock-in
+    initial: 10
+    min: 0
+    max: 60
+    step: 5
+  
+  #Battery Alert
+  battery_alert_threshold_max:
+    name: "Max Alert Threshold"
+    icon: mdi:arrow-collapse-up
+    mode: slider
+    min: -1
+    max: 100
+    initial: 10
+
+  battery_alert_threshold_min:
+    name: "Min Alert Threshold"
+    icon: mdi:arrow-collapse-down
+    mode: slider
+    min: -1
+    max: 100
+    initial: -1

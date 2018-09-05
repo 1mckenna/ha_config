@@ -1,0 +1,25 @@
+- alias: Turn on main floor lights when there is movement
+  initial_state: 'off'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.mainfloor_multisensor_motion
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: 'home'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.outlet_1_switch, switch.outlet_2_switch
+
+- alias: Turn off main floor lights 10 minutes after last movement
+  initial_state: 'off'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.mainfloor_multisensor_motion
+    to: 'off'
+    for:
+      minutes: 10
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.outlet_1_switch, switch.outlet_2_switch

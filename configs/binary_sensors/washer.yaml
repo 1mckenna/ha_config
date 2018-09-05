@@ -1,0 +1,11 @@
+###########################
+# Washing Machine Sensor                 
+###########################
+- platform: template
+  sensors:  
+    washing_machine:
+      friendly_name: 'Washing Machine'
+      device_class: power
+      delay_off:
+        minutes: 5
+      value_template: "{{ states('sensor.washing_machine_power') | float > 0 }}"

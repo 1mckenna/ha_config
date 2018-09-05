@@ -1,0 +1,4 @@
+#Turn on TV and set to PS3 for Movies in Basement
+- name: Movie
+  entities:
+    script.ps3: on

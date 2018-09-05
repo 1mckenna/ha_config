@@ -1,0 +1,14 @@
+#Entryway Group
+entryway_sensor_group:
+  name: Entryway Sensors
+  control: hidden
+  view: no
+  entities: 
+    - binary_sensor.front_door_state
+    - binary_sensor.front_door_tamper
+    - sensor.entryway_sensor_luminance
+    - sensor.entryway_sensor_relative_humidity
+    - sensor.entryway_sensor_temperature
+    - binary_sensor.entryway_multisensor_motion
+    - binary_sensor.entryway_multisensor_tamper
+    - sensor.entryway_multisensor_batterylevel

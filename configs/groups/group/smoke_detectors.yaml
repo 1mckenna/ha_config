@@ -1,0 +1,9 @@
+#Smoke Detectors Group
+smoke_detectors:
+  name: Smoke Detectors
+  control: hidden
+  view: no
+  entities:
+    - sensor.entryway_smoke_co2
+    - sensor.basement_smoke_co2
+    - sensor.upstairs_smoke_co2

@@ -1,0 +1,11 @@
+#Bedroom View
+#
+bedroom:
+  name: Bedroom
+  view: yes
+  entities:
+    - group.alarm_clock
+    - switch.bedroom_light_switch
+    - light.bedroom_lamps
+    - fan.bedroom_fan_level
+    - media_player.bedroom_home

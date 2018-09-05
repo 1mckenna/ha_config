@@ -1,0 +1,10 @@
+#Presence Automation Group
+presence_autos_group:
+  name: Presence
+  control: hidden
+  view: no
+  entities:
+    - automation.admin_arrived_home
+    - automation.user_arrived_home
+    - automation.away_mode
+

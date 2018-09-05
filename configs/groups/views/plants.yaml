@@ -1,0 +1,8 @@
+#Plant View
+#
+Plants:
+  name: Plants
+  control: hidden
+  view: yes
+  entities:
+    - group.marilyn_plant_group

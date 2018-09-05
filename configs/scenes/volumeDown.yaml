@@ -1,0 +1,4 @@
+#Turn Volume Down
+- name: Volume Down
+  entities:
+    script.volume_down: on

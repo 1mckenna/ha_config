@@ -1,0 +1,101 @@
+#LAUNDRY AUTOMATIONS
+#
+#NOTIFY WHEN WASHING MACHINE COMPLETES CYCLE
+- alias: 'Washer Cycle Complete'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.washing_machine
+    to: 'off'
+  action:
+    - service_template: >
+        {% if (is_state('device_tracker.d463c65d0c74', 'home')) and (is_state('device_tracker.galaxynote9', 'home'))  %}
+          notify.both_phones
+        {% elif is_state('device_tracker.d463c65d0c74', 'home') %}
+          notify.admin_phone
+        {% elif is_state('device_tracker.galaxynote9', 'home') %}
+          notify.user_phone
+        {% endif %}
+      data_template:
+        message: >
+          Washing Machine Completed {{ states.sensor.time.state }}
+    - service: tts.google_say
+      data_template:
+        entity_id:
+          - media_player.guest_room_speaker
+          - media_player.main_floor_home
+          - media_player.basement_speaker
+          - media_player.bathroom_speaker
+          - media_player.bedroom_home
+        message: "Washing Machine Cycle Completed"
+
+#NOTIFY WHEN DRYER ENTERING WRINKLE GUARD MODE
+- alias: 'Dryer Cooldown Mode'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.dryer_cooldown
+    to: 'on'
+  action:
+    - service_template: >
+        {% if (is_state('device_tracker.d463c65d0c74', 'home')) and (is_state('device_tracker.galaxynote9', 'home'))  %}
+          notify.both_phones
+        {% elif is_state('device_tracker.d463c65d0c74', 'home') %}
+          notify.admin_phone
+        {% elif is_state('device_tracker.galaxynote9', 'home') %}
+          notify.user_phone
+        {% endif %}
+      data_template:
+        message: >
+          Dryer Starting Wrinkle Guard Mode {{ states.sensor.time.state }}
+    - service: tts.google_say
+      data_template:
+        entity_id:
+          - media_player.guest_room_speaker
+          - media_player.main_floor_home
+          - media_player.basement_speaker
+          - media_player.bathroom_speaker
+          - media_player.bedroom_home
+        message: "The dryer is in cool down mode, go fold the clothes"
+
+#NOTIFY WHEN DRYER HAS COMPLETED CYCLE
+- alias: 'Drying Cycle Complete'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.dryer_cooldown
+    to: 'off'
+  condition:
+  - condition: state
+    entity_id: 'binary_sensor.dryer_running'
+    state: 'off'
+  action:
+    - service_template: >
+        {% if (is_state('device_tracker.d463c65d0c74', 'home')) and (is_state('device_tracker.galaxynote9', 'home'))  %}
+          notify.both_phones
+        {% elif is_state('device_tracker.d463c65d0c74', 'home') %}
+          notify.admin_phone
+        {% elif is_state('device_tracker.galaxynote9', 'home') %}
+          notify.user_phone
+        {% endif %}
+      data_template:
+        message: >
+          Laundry Drying Completed {{ states.sensor.time.state }}
+    - service: tts.google_say
+      data_template:
+        entity_id:
+          - media_player.guest_room_speaker
+          - media_player.main_floor_home
+          - media_player.basement_speaker
+          - media_player.bathroom_speaker
+          - media_player.bedroom_home
+        message: "Drying Cycle Complete"
+
+#TURN OFF LAUNDRY SWITCHES IF LAUNDRY HAS BEEN COMPLETED FOR AN HOUR
+- alias: 'Turn Off Laundry Switches'
+  trigger:
+    platform: state
+    entity_id: group.laundry
+    to: 'off'
+    for:
+      hours: 1
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.dryer_switch,switch.washing_machine_switch

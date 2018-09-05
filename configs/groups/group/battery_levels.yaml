@@ -1,0 +1,18 @@
+#Battery Sensor Group
+battery_sensor_group:
+  name: Battery Levels
+  control: hidden
+  view: no
+  entities:
+    - sensor.basement_sensor_battery
+    - sensor.entryway_sensor_battery
+    - sensor.garage_sensor_battery
+    - sensor.main_floor_sensor_battery
+    - sensor.thermostat_battery
+    - sensor.entryway_smoke_detector_battery
+    - sensor.basement_smoke_detector_battery
+    - sensor.upstairs_smoke_detector_battery
+    - sensor.front_door_battery
+    - sensor.kitchen_door_battery
+    - sensor.game_room_main_door_battery
+    - sensor.game_room_side_door_battery

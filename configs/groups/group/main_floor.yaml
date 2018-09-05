@@ -1,0 +1,14 @@
+#Main Floor Group
+mainfloor_sensor_group:
+  name: Main Floor Sensors
+  control: hidden
+  view: no
+  entities:
+    - binary_sensor.kitchen_door_state
+    - binary_sensor.kitchen_door_tamper
+    - sensor.main_floor_sensor_luminance
+    - sensor.main_floor_sensor_relative_humidity
+    - sensor.main_floor_sensor_temperature
+    - binary_sensor.mainfloor_multisensor_motion
+    - binary_sensor.mainfloor_multisensor_tamper
+    - sensor.mainfloor_multisensor_batterylevel

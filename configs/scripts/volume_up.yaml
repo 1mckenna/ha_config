@@ -1,0 +1,13 @@
+#Turn Volume Up on Reciever
+  volume_up:
+    sequence:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.txrz800
+        volume_level: >
+          {% set current = states.media_player.txrz800.attributes.volume_level %}
+          {% set next = current + 0.0250 %}
+          {% if next > 1 %}
+            {% set next = 1 %}
+          {% endif %}
+          {{ next }}

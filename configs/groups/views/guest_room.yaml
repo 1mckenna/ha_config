@@ -1,0 +1,7 @@
+guestroom:
+  name: Guest Room
+  view: yes
+  entities:
+    - switch.guest_room_light_switch
+    - light.guest_bedroom_lamp
+    - media_player.guest_room_speaker

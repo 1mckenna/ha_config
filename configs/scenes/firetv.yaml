@@ -1,0 +1,4 @@
+#Turn on TV and set to FireTV in Basement
+- name: FireTV
+  entities:
+    script.firetv: on

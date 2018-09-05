@@ -1,0 +1,38 @@
+#Weather Alert Automation
+- alias: 'Wx Alert Notification'
+  trigger:
+    platform: state
+    entity_id: sensor.pws_alerts
+  action:
+    service: script.notifyonwxalert
+
+#Notify on Severe Weather
+- alias: TTS and Notify Weather Alert
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.pws_alerts
+    above: 0
+  condition:
+    - condition: template
+      value_template: >
+        {% if states.automation.tts_and_notify_weather_alert.last_triggered is not none %}
+          {% if as_timestamp(now()) | int   -  as_timestamp(states.automation.tts_and_notify_weather_alert.last_triggered) | int > 3600 %}
+            true 
+          {% else %}
+           false
+          {% endif %}
+        {% else %}
+          false
+        {% endif %}
+  action:
+    - service: tts.google_say
+      data_template:
+        entity_id:
+          - media_player.guest_room_speaker
+          - media_player.main_floor_home
+          - media_player.basement_speaker
+          - media_player.bathroom_speaker
+          - media_player.bedroom_home
+        message: "The National Weather Service has issued a 
+        {{ states.sensor.pws_alerts.attributes.Description }} for your area, 
+        it expires at {{ states.sensor.pws_alerts.attributes.Expires }}."
