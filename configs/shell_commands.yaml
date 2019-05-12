@@ -1,0 +1,1 @@
+  clean_knowndevices: /bin/bash /config/clean_knowndevices.sh

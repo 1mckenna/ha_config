@@ -7,12 +7,16 @@ homeassistant:
   time_zone: America/Chicago
   customize: !include configs/customize.yaml 
   auth_providers: !include configs/auth.yaml
+  packages: !include_dir_named packages
 
 # Enables the frontend
 frontend: !include configs/frontend.yaml
 
 # Enables configuration UI
 config:
+
+# Enables the System Health Component
+system_health:
 
 #Load HTTP Config
 http: !include configs/http.yaml
@@ -28,6 +32,9 @@ mqtt: !include configs/mqtt.yaml
 
 #Load MQTT Lights
 light: !include configs/mqtt_light.yaml
+
+#Enabling Shell Commands
+shell_command: !include configs/shell_commands.yaml
 
 #Load Cover
 cover:
@@ -45,6 +52,12 @@ automation: !include automations.yaml
 #Load Google Assistant
 google_assistant: !include configs/gassistant.yaml
 
+#Google Home
+googlehome: !include configs/googlehome.yaml
+
+#Load Asuswrt
+asuswrt: !include configs/asuswrt.yaml
+
 #Load Device Tracker
 device_tracker: !include configs/device_tracker.yaml
 
@@ -57,6 +70,9 @@ conversation:
 # Enables support for tracking state changes over time.
 history:
 
+#Enables support for shopping lists
+shopping_list: 
+
 # View all events in a logbook
 logbook: !include configs/logbook.yaml
 
@@ -65,10 +81,12 @@ sun:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
     cache: true
     cache_dir: /config/tts
     time_memory: 300
+
 #Load Logging Config
 logger: !include configs/logging.yaml
 
@@ -90,14 +108,27 @@ group: !include_dir_merge_named configs/groups
 #Load Scripts
 script: !include_dir_merge_named configs/scripts
 
+#Load Weather platform
+weather: !include configs/weather.yaml
+
 #LOAD SLIDERS
 input_number: !include configs/input_slider.yaml
 
 #LOAD INPUT BOOLEANS
-input_boolean: !include configs/input_boolean.yaml
+input_boolean: !include_dir_merge_named configs/input_booleans
+
+#LOAD INPUT SELECT
+input_select: !include_dir_merge_named configs/input_select
 
 #Point HA to MariaDB
 recorder: !include configs/recorder.yaml
 
 #Setup Influx for use with Grafana
 influxdb: !include configs/influxdb.yaml
+
+#Setup Zwave network Mesh Graph
+panel_custom:
+  - name: zwavegraph2
+    sidebar_title: ZWave Graph
+    sidebar_icon: mdi:access-point-network
+    url_path: zwave

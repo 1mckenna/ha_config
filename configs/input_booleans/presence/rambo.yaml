@@ -1,0 +1,31 @@
+  rambo_basement_presence:
+    name: Rambo Basement Presence
+    initial: false
+
+  rambo_garage_presence:
+    name: Rambo Garage Presence
+    initial: false
+
+  rambo_bedroom_presence:
+    name: Rambo Bedroom Presence
+    initial: false
+
+  rambo_office_presence:
+    name: Rambo Office Presence
+    initial: false
+
+  rambo_mainfloor_presence:
+    name: Rambo Main Floor Presence
+    initial: false
+
+  rambo_entryway_presence:
+    name: Rambo Entryway Presence
+    initial: false
+
+  rambo_guestroom_presence:
+    name: Rambo Guest Room Presence
+    initial: false
+
+  rambo_bathroom_presence:
+    name: Rambo Bathroom Presence
+    initial: false

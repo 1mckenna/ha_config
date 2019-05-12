@@ -1,0 +1,14 @@
+  admin_room_location:
+    name: !secret adminRoomLoc
+    icon: mdi:account
+    options:
+      - Basement
+      - Garage
+      - Main Floor
+      - Entryway
+      - Bedroom
+      - Guest Room
+      - Bathroom
+      - Office
+      - Away
+      - Home

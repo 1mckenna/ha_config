@@ -4,8 +4,8 @@ mainfloor_sensor_group:
   control: hidden
   view: no
   entities:
-    - binary_sensor.kitchen_door_state
-    - binary_sensor.kitchen_door_tamper
+#    - binary_sensor.kitchen_door_state
+#    - binary_sensor.kitchen_door_tamper
     - sensor.main_floor_sensor_luminance
     - sensor.main_floor_sensor_relative_humidity
     - sensor.main_floor_sensor_temperature

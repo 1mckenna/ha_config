@@ -1,0 +1,13 @@
+###########################
+# Bedroom Sensor
+###########################
+- platform: template
+  sensors:  
+    bedroom_multisensor_motion:
+      friendly_name: 'Bedroom Motion'
+      device_class: motion
+      value_template: "{{ (not is_state('sensor.bedroom_sensor_burglar','0')) }}"
+    bedroom_multisensor_tamper:
+      friendly_name: 'Bedroom Sensor Tampering'
+      device_class: vibration
+      value_template: "{{ is_state('sensor.bedroom_sensor_burglar', '3') }}"

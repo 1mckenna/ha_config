@@ -1,5 +1,6 @@
   #Master Bedroom Smart Bulb
-- platform: mqtt_json
+- platform: mqtt
+  schema: json
   name: 'Bedroom Lamps'
   state_topic: light/Bedroom
   command_topic: light/Bedroom/set
@@ -11,7 +12,8 @@
   optimistic: false
   
   #Guest Bedroom Smart Bulb
-- platform: mqtt_json
+- platform: mqtt
+  schema: json
   name: 'Guest Bedroom Lamp'
   state_topic: light/Guest
   command_topic: light/Guest/set
@@ -23,7 +25,8 @@
   optimistic: false
   
   #Office Smart Bulb
-- platform: mqtt_json
+- platform: mqtt
+  schema: json
   name: 'Office Lamp'
   state_topic: light/Office
   command_topic: light/Office/set

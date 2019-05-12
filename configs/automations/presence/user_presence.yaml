@@ -1,0 +1,611 @@
+# User is in the Basement using Google Home BT tracking
+- alias: User in Basement
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.basement_user_gh_rssi
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"     
+  action:
+    - delay: '00:00:05'
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.basement_user_gh_rssi.state )  }}"  
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.user_basement_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_garage_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bedroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_office_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_mainfloor_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_entryway_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_guestroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bathroom_presence
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Basement
+
+# User is in the Garage using Google Home BT tracking
+- alias: User in Garage
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.garage_user_gh_rssi
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"     
+  action:
+    - delay: '00:00:05'
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.garage_user_gh_rssi.state )  }}"  
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.user_garage_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_basement_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bedroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_office_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_mainfloor_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_entryway_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_guestroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bathroom_presence
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Garage
+
+
+# User is in the Bedroom using Google Home BT tracking
+- alias: User in Bedroom
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.bedroom_user_gh_rssi
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"     
+  action:
+    - delay: '00:00:05'
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.bedroom_user_gh_rssi.state )  }}"  
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.user_bedroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_basement_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_garage_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_office_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_mainfloor_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_entryway_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_guestroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bathroom_presence
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Bedroom
+
+
+# User is in the Office using Google Home BT tracking
+- alias: User in Office
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.office_user_gh_rssi
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"     
+  action:
+    - delay: '00:00:05'
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.office_user_gh_rssi.state )  }}"  
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.user_office_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_basement_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_garage_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bedroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_mainfloor_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_entryway_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_guestroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bathroom_presence
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Office
+
+# User is in the Main Floor using Google Home BT tracking
+- alias: User in Main Floor
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.mainfloor_user_gh_rssi
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"     
+  action:
+    - delay: '00:00:05'
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.mainfloor_user_gh_rssi.state )  }}"  
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.user_mainfloor_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_basement_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_garage_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bedroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_office_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_entryway_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_guestroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bathroom_presence
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Main Floor
+
+# User is in the Entryway using Google Home BT tracking
+- alias: User in Entryway
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.entryway_user_gh_rssi
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"     
+  action:
+    - delay: '00:00:05'
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.entryway_user_gh_rssi.state )  }}"  
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.user_entryway_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_basement_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_garage_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bedroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_office_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_mainfloor_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_guestroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bathroom_presence
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Entryway
+
+# User is in the Guest Room using Google Home BT tracking
+- alias: User in Guest Room
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.guestroom_user_gh_rssi
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"     
+  action:
+    - delay: '00:00:05'
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bathroom_user_gh_rssi.state ) > ( states.sensor.guestroom_user_gh_rssi.state )  }}"  
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.user_guestroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_basement_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_garage_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bedroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_office_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_mainfloor_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_entryway_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bathroom_presence
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Guest Room
+
+# User is in the Bathroom using Google Home BT tracking
+- alias: User in Bathroom
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.bathroom_user_gh_rssi
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+    - condition: template
+      value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"     
+  action:
+    - delay: '00:00:05'
+    - condition: and
+      conditions:
+      - condition: template
+        value_template: "{{ ( states.sensor.basement_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.garage_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.bedroom_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.office_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.mainfloor_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.entryway_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"
+      - condition: template
+        value_template: "{{ ( states.sensor.guestroom_user_gh_rssi.state ) > ( states.sensor.bathroom_user_gh_rssi.state )  }}"  
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.user_bathroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_basement_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_garage_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bedroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_office_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_mainfloor_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_entryway_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_guestroom_presence
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Bathroom
+
+# User is away from the house
+- alias: 'User is Away'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id:  device_tracker.galaxynote9
+    to: 'not_home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Away
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_basement_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_garage_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bedroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_office_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_mainfloor_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_entryway_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_guestroom_presence
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.user_bathroom_presence
+
+# User is now home and BT is unknown
+- alias: 'User is Home'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id:  device_tracker.galaxynote9
+    to: 'home'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.user_room_location
+        option: Home

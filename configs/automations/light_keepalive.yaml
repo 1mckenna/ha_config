@@ -2,7 +2,7 @@
 - alias: MQTT Lights KeepAlive ON
   trigger:
     - platform: time
-      at: '10:00'
+      at: '10:00:00'
   action:
     - service: homeassistant.turn_on
       entity_id: group.all_lights
@@ -11,7 +11,7 @@
 - alias: MQTT Lights KeepAlive OFF
   trigger:
     - platform: time
-      at: '10:05'
+      at: '10:05:00'
   action:
     service: homeassistant.turn_off
     entity_id: group.all_lights

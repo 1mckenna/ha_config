@@ -19,13 +19,13 @@
         {% set light_dur = states.input_number.wakeup_duration.state | int %}
         {% set delay_dur = states.input_number.wakeup_delay.state | int %}
         {% set alarm_min_light = alarm_min - light_dur - delay_dur %}
-        {% if alarm_min_light  < 0 %}
+        {% if alarm_min_light | int < 0 %}
         {% set alarm_min_light = alarm_min_light + 60 %}
         {% set alarm_hour_light = alarm_hour - 1 %}
-        {% if alarm_hour_light < 0 %}{% set alarm_hour_light = 23 %}{% endif %}
-        {% if alarm_hour_light < 10 %}0{% endif %}{{ alarm_hour_light}}:{% if alarm_min_light < 10 %}0{% endif %}{{ alarm_min_light }}
+        {% if alarm_hour_light | int < 0 %}{% set alarm_hour_light = 23 %}{% endif %}
+        {% if alarm_hour_light | int < 10 %}0{% endif %}{{ alarm_hour_light}}:{% if alarm_min_light | int < 10 %}0{% endif %}{{ alarm_min_light }}
         {% else %}
-        {% if alarm_hour < 10 %}0{% endif %}{{ alarm_hour }}:{% if alarm_min_light < 10 %}0{% endif %}{{ alarm_min_light }}
+        {% if alarm_hour | int < 10 %}0{% endif %}{{ alarm_hour }}:{% if alarm_min_light | int < 10 %}0{% endif %}{{ alarm_min_light }}
         {% endif %}
         {% endif %}
 

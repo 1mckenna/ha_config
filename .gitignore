@@ -9,10 +9,12 @@ gactions/
 .uuid
 .HA_VERSION
 zwave/*.xml
+zwave/*.xml.bak
 build/asus_pk
 known_devices.yaml
 tts/*
 automations.yaml
 .storage/
+.shopping_list.json
 ip_bans.yaml
-www/google833bd2428f85c6f6.html
+www/

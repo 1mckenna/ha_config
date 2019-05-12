@@ -1,4 +1,4 @@
 #Turn Volume Up
 - name: Volume Up
   entities:
-    script.volume_up_: on
+    script.volume_up: on

@@ -1,0 +1,5 @@
+  host: !secret routerIP
+  username: !secret routerUN
+  protocol: ssh
+  port: 22
+  ssh_key: !secret routerKey

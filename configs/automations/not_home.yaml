@@ -10,7 +10,7 @@
     state: 'off'
   action:
     service: homeassistant.turn_off
-    entity_id: group.all_fans,group.all_switches,group.all_lights
+    entity_id: group.all_fans,group.all_lights,switch.bedroom_light_switch,switch.dryer_switch,switch.guest_room_light_switch,switch.outlet_1_switch,switch.outlet_2_switch,switch.porch_light_switch,switch.washing_machine_switch
 
 #DONT TURN OFF LAUNDRY IF IT WAS ON WHEN WE LEFT HOME    
 - alias: 'Laundry Away Mode'

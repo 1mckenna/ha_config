@@ -1,0 +1,16 @@
+###########################
+# UPS Sensor
+###########################
+- platform: nut
+  alias: DeathStarUPS
+  host: !secret upsHost
+  port: 3493
+  username: !secret upsUser
+  password: !secret upsPass
+  resources:
+    - ups.status.display
+    - ups.load
+    - ups.realpower.nominal
+    - input.voltage
+    - battery.runtime
+    - battery.charge

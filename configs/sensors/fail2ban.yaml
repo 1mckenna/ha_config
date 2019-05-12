@@ -3,7 +3,9 @@
 ###########################
 - platform: fail2ban
   jails:
-    - hass-iptables
-    - ssh   
-#  file_path: /etc/fail2ban/log/fail2ban.log
+    - sshd
+    - traefik-auth
+    - traefik-badbots
+    - traefik-botsearch
+  file_path: /etc/fail2ban/log/fail2ban.log
   scan_interval: 60

@@ -1,0 +1,12 @@
+- alias: 'Garage Door Opened At Night'
+  trigger:
+    platform: state
+    entity_id: cover.garage_door_barrier_state_label
+    to: 'open'
+  condition:
+    - condition: sun
+      after: sunset
+      after_offset: "-0:20:00"
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.outlet_1_switch, switch.outlet_2_switch

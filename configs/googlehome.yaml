@@ -1,0 +1,41 @@
+  devices:
+    - host: !secret gh_basement
+      track_alarms: true
+      track_devices: true
+      rssi_threshold: -99
+      #device_types: 3
+    - host: !secret gh_garage
+      track_alarms: true
+      track_devices: true
+      rssi_threshold: -99
+      #device_types: 3
+    - host: !secret gh_mainfloor
+      track_alarms: true
+      track_devices: true
+      rssi_threshold: -99
+      #device_types: 3
+    - host: !secret gh_entryway
+      track_alarms: true
+      track_devices: true
+      rssi_threshold: -60
+      #device_types: 3
+    - host: !secret gh_bedroom
+      track_alarms: true
+      track_devices: true
+      rssi_threshold: -99
+      #device_types: 3
+    - host: !secret gh_guestroom
+      track_alarms: true
+      track_devices: true
+      rssi_threshold: -67
+      #device_types: 3
+    - host: !secret gh_bathroom
+      track_alarms: true
+      track_devices: true
+      rssi_threshold: -67
+      #device_types: 3
+    - host: !secret gh_office
+      track_alarms: true
+      track_devices: true
+      rssi_threshold: -67
+      #device_types: 3

@@ -20,3 +20,9 @@ room_climate_group:
     - sensor.entryway_sensor_relative_humidity
     - sensor.garage_sensor_temperature
     - sensor.garage_sensor_relative_humidity
+    - sensor.bedroom_sensor_temperature
+    - sensor.bedroom_sensor_relative_humidity
+    - sensor.guest_room_sensor_temperature
+    - sensor.guest_room_sensor_relative_humidity
+    - sensor.office_sensor_temperature
+    - sensor.office_sensor_relative_humidity

@@ -1,41 +1,45 @@
-  sensor.basement_sensor_luminance:
-    friendly_name: Basement Luminance
-    icon: mdi:brightness-6
-  sensor.basement_sensor_relative_humidity:
-    friendly_name: Basement Relative Humidity
-    icon: mdi:water-percent
   sensor.basement_sensor_temperature:
-    friendly_name: Basement Temperature
+    device_class: temperature
+  sensor.basement_sensor_luminance:
+    device_class: illuminance
+  sensor.basement_sensor_relative_humidity:
+    device_class: humidity
   sensor.main_floor_sensor_temperature:
-    friendly_name: Main Floor Temperature
+    device_class: temperature
   sensor.main_floor_sensor_luminance:
-    friendly_name: Main Floor Luminance
-    icon: mdi:brightness-6
+    device_class: illuminance
   sensor.main_floor_sensor_relative_humidity:
-    friendly_name: Main Floor Relative Humidity
-    icon: mdi:water-percent
+    device_class: humidity
   sensor.entryway_sensor_temperature:
-    friendly_name: Entryway Temperature
+    device_class: temperature
   sensor.entryway_sensor_luminance:
-    friendly_name: Entryway Luminance
-    icon: mdi:brightness-6
+    device_class: illuminance
   sensor.entryway_sensor_relative_humidity:
-    friendly_name: Entryway Relative Humidity
-    icon: mdi:water-percent
+    device_class: humidity
   sensor.garage_sensor_luminance:
-    friendly_name: Garage Luminance
-    icon: mdi:brightness-6
+    device_class: illuminance
   sensor.garage_sensor_relative_humidity:
-    friendly_name: Garage Relative Humidity
-    icon: mdi:water-percent
+    device_class: humidity
   sensor.garage_sensor_temperature:
-    friendly_name: Garage Temperature
-  sensor.marilyn_status:
-    friendly_name: Marilyn
-  sensor.plant_name:
-    icon: mdi:flower
-  sensor.marilyn_moisture:
-    icon: mdi:water-percent
+    device_class: temperature
+  sensor.guest_room_sensor_luminance:
+    device_class: illuminance
+  sensor.guest_room_sensor_relative_humidity:
+    device_class: humidity
+  sensor.guest_room_sensor_temperature:
+    device_class: temperature
+  sensor.bedroom_sensor_luminance:
+    device_class: illuminance
+  sensor.bedroom_sensor_relative_humidity:
+    device_class: humidity
+  sensor.bedroom_sensor_temperature:
+    device_class: temperature
+  sensor.office_sensor_luminance:
+    device_class: illuminance
+  sensor.office_sensor_relative_humidity:
+    device_class: humidity
+  sensor.office_sensor_temperature:
+    device_class: temperature
   climate.thermostat_heating_1:
     friendly_name: Heating
   climate.thermostat_cooling_1:
@@ -66,29 +70,6 @@
   group.all_automations:
     hidden: false
     friendly_name: Automations
-#Battery Alert
-  group.battery_alert:
-    friendly_name: "Battery Alert"
-    icon: mdi:steam
-  automation.battery_notification:
-    friendly_name: "Battery Notification"
-    icon: mdi:comment-alert-outline
-  automation.battery_notification_clear:
-    friendly_name: "Battery Notification Clear"
-    icon: mdi:comment-remove-outline
-  automation.battery_alert_html5:
-    friendly_name: "Battery HTML5 Notification"
-    icon: mdi:comment-alert-outline
-  automation.battery_sensor_from_battery_level_attribute:
-    friendly_name: "Battery Sensor from battery_level Attribute"
-    icon: mdi:battery-alert
-  automation.battery_sensor_from_battery_attribute:
-    friendly_name: "Battery Sensor from battery Attribute"
-    icon: mdi:battery-alert
-  automation.battery_sensor_from_battery_numeric_attribute:
-    friendly_name: "Battery Sensor from battery numeric Attribute"
-    icon: mdi:battery-alert
-    initial_state: 'on'
  #ALARM
   sensor.wakeup_alarm_time:
     icon: mdi:timer
@@ -103,29 +84,6 @@
     friendly_name: "Upstairs Smoke Detector"          
   sensor.entryway_smoke_co2:
     friendly_name: "Entryway Smoke Detector"
-  #TAB Ordering
-  group.basement:
-    order: 1
-  group.entryway:
-    order: 2
-  group.mainlevel:
-    order: 3
-  group.bedroom:
-    order: 4
-  group.guestroom:
-    order: 5
-  group.office:
-    order: 6
-  group.garage:
-    order: 7
-  group.plants:
-    order: 8
-  group.climate:
-    order: 9
-  group.automations:
-    order: 10
-  group.zwave:
-    order: 11
   light.bedroom_lamps:
     icon: mdi:lamp
   light.guest_bedroom_lamp:
@@ -141,6 +99,18 @@
     icon: mdi:tumble-dryer
   binary_sensor.dryer_cooldown:
     icon: mdi:tumble-dryer
-#Hide Door Switch
-  switch.kitchen_door_switch:
-    hidden: true
+#UPS
+  sensor.nut_ups_status:
+    friendly_name: "UPS Status"
+  sensor.nut_ups_nominal_real_power:
+    friendly_name: "Input Power"
+  sensor.nut_ups_input_voltage:
+    friendly_name: "Input Voltage"
+  sensor.nut_ups_battery_charge:
+    friendly_name: "UPS Battery"
+    battery_sensor_creation_disabled: true
+  sensor.nut_ups_load:
+    friendly_name: "UPS Load"
+  sensor.nut_ups_battery_runtime:
+    friendly_name: "Time Left"
+    unit_of_measurement: 'seconds'

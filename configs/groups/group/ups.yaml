@@ -1,0 +1,12 @@
+#UPS Group
+ups_sensors:
+  name: UPS Sensors
+  control: hidden
+  view: no
+  entities:
+    - sensor.nut_ups_status
+    - sensor.nut_ups_nominal_real_power
+    - sensor.nut_ups_input_voltage
+    - sensor.nut_ups_battery_charge
+    - sensor.nut_ups_load
+    - sensor.nut_ups_runtime_friendly

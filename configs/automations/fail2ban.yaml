@@ -2,25 +2,23 @@
 - alias: 'Notify on Failed Login'
   trigger:
     - platform: state
-      entity_id: sensor.fail2ban_ssh
-    - platform: state
-      entity_id: sensor.fail2ban_hassiptables
+      entity_id: sensor.fail2ban_sshd, sensor.fail2ban_traefikauth, sensor.fail2ban_traefikbadbots, sensor.fail2ban_traefikbotsearch
   condition:
     condition: or
     conditions:
       - condition: template
-        value_template: '{{ states.sensor.fail2ban_ssh.state != "None" }}'
+        value_template: '{{ states.sensor.fail2ban_sshd.state != "None" }}'
       - condition: template
-        value_template: '{{ states.sensor.fail2ban_hassiptables.state != "None" }}'
+        value_template: '{{ states.sensor.fail2ban_traefikauth.state != "None" }}'
   action:
     - service: notify.notify
       data_template:
         message: >
           Failed Login! {{ now().strftime("%h %d, %Y at %H:%M:%S") }}
-          {% if states.sensor.fail2ban_ssh.state != "None" %}
-            SSH Attempt(s) from {{states.sensor.fail2ban_ssh.state}}
+          {% if states.sensor.fail2ban_sshd.state != "None" %}
+            SSH Attempt(s) from {{states.sensor.fail2ban_sshd.state}}
           {% endif %}
-          {% if states.sensor.fail2ban_hassiptables.state != "None" %}
-            Web Attempt(s) from {{states.sensor.fail2ban_hassiptables.state}}
+          {% if states.sensor.fail2ban_traefikauth.state != "None" %}
+            Web Attempt(s) from {{states.sensor.fail2ban_traefikauth.state}}
           {% endif %}
         target: !secret adminPhone

@@ -30,20 +30,3 @@
     min: 0
     max: 60
     step: 5
-  
-  #Battery Alert
-  battery_alert_threshold_max:
-    name: "Max Alert Threshold"
-    icon: mdi:arrow-collapse-up
-    mode: slider
-    min: -1
-    max: 100
-    initial: 10
-
-  battery_alert_threshold_min:
-    name: "Min Alert Threshold"
-    icon: mdi:arrow-collapse-down
-    mode: slider
-    min: -1
-    max: 100
-    initial: -1

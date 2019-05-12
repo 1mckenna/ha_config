@@ -1,0 +1,93 @@
+###########################
+# Admin room location         
+###########################
+- platform: template
+  sensors:
+    basement_admin_gh_rssi:
+      value_template: >-
+        {% if is_state("device_tracker.192_168_10_202_d4_63_c6_5d_0c_73", "home") %}
+          {{state_attr('device_tracker.192_168_10_202_d4_63_c6_5d_0c_73', 'rssi')}}
+        {% else %}
+          -99
+        {% endif %}
+
+- platform: template
+  sensors:
+    garage_admin_gh_rssi:
+      value_template: >-
+        {% if is_state("device_tracker.192_168_10_206_d4_63_c6_5d_0c_73", "home") %}
+          {{state_attr('device_tracker.192_168_10_206_d4_63_c6_5d_0c_73', 'rssi')}}
+        {% else %}
+          -99
+        {% endif %}
+          
+- platform: template
+  sensors:
+    bedroom_admin_gh_rssi:
+      value_template: >-
+        {% if is_state("device_tracker.192_168_10_229_d4_63_c6_5d_0c_73", "home") %}
+          {{state_attr('device_tracker.192_168_10_229_d4_63_c6_5d_0c_73', 'rssi')}}
+        {% else %}
+          -99
+        {% endif %}
+
+
+
+- platform: template
+  sensors:
+    office_admin_gh_rssi:
+      value_template: >-
+        {% if is_state("device_tracker.192_168_10_56_d4_63_c6_5d_0c_73", "home") %}
+          {{state_attr('device_tracker.192_168_10_56_d4_63_c6_5d_0c_73', 'rssi')}}
+        {% else %}
+          -99
+        {% endif %}
+
+
+
+- platform: template
+  sensors:
+    mainfloor_admin_gh_rssi:
+      value_template: >-
+        {% if is_state("device_tracker.192_168_10_200_d4_63_c6_5d_0c_73", "home") %}
+          {{state_attr('device_tracker.192_168_10_200_d4_63_c6_5d_0c_73', 'rssi')}}
+        {% else %}
+          -99
+        {% endif %}
+
+- platform: template
+  sensors:
+    entryway_admin_gh_rssi:
+      value_template: >-
+        {% if is_state("device_tracker.192_168_10_118_d4_63_c6_5d_0c_73", "home") %}
+          {{state_attr('device_tracker.192_168_10_118_d4_63_c6_5d_0c_73', 'rssi')}}
+        {% else %}
+          -99
+        {% endif %}
+
+- platform: template
+  sensors:
+    guestroom_admin_gh_rssi:
+      value_template: >-
+        {% if is_state("device_tracker.192_168_10_154_d4_63_c6_5d_0c_73", "home") %}
+          {{state_attr('device_tracker.192_168_10_154_d4_63_c6_5d_0c_73', 'rssi')}}
+        {% else %}
+          -99
+        {% endif %}
+
+- platform: template
+  sensors:
+    bathroom_admin_gh_rssi:
+      value_template: >-
+        {% if is_state("device_tracker.192_168_10_201_d4_63_c6_5d_0c_73", "home") %}
+          {{state_attr('device_tracker.192_168_10_201_d4_63_c6_5d_0c_73', 'rssi')}}
+        {% else %}
+          -99
+        {% endif %}
+
+- platform: template
+  sensors:
+    admin_room_status:
+      value_template: '{{ states.input_select.admin_room_location.state }}'
+      friendly_name: !secret adminRoomLoc
+      icon_template: mdi:account

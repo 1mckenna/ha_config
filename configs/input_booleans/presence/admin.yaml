@@ -1,0 +1,31 @@
+  admin_basement_presence:
+    name: Admin Basement Presence
+    initial: false
+
+  admin_garage_presence:
+    name: Admin Garage Presence
+    initial: false
+
+  admin_bedroom_presence:
+    name: Admin Bedroom Presence
+    initial: false
+
+  admin_office_presence:
+    name: Admin Office Presence
+    initial: false
+
+  admin_mainfloor_presence:
+    name: Admin Main Floor Presence
+    initial: false
+
+  admin_entryway_presence:
+    name: Admin Entryway Presence
+    initial: false
+
+  admin_guestroom_presence:
+    name: Admin Guest Room Presence
+    initial: false
+
+  admin_bathroom_presence:
+    name: Admin Bathroom Presence
+    initial: false

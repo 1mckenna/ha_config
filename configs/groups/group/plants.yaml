@@ -1,9 +1,0 @@
-#Plant Group
-marilyn_plant_group:
-  name: Marilyn
-  control: hidden
-  view: no
-  entities:
-    - sensor.plant_name 
-    - sensor.marilyn_moisture
-    - sensor.marilyn_status

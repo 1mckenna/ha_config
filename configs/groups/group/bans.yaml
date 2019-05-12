@@ -1,0 +1,10 @@
+#Fail2Ban Group
+ip_ban_sensors:
+  name: IP Ban Sensors
+  control: hidden
+  view: no
+  entities:
+    - sensor.fail2ban_sshd
+    - sensor.fail2ban_traefikauth
+    - sensor.fail2ban_traefikbadbots
+    - sensor.fail2ban_traefikbotsearch

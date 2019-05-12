@@ -11,38 +11,30 @@
       strm-box: "FireTV"
       video2: "Basement Chromecast"
       dvd: "PS3"
-
 #Add Basement TV
   - platform: samsungtv
     name: "Basement TV"
     host: !secret samsung_host
     port: !secret samsung_port
     mac: !secret samsung_mac
-
+#Add Google Homes
   - platform: cast
-    name: "Bedroom Google Home"
-    host: !secret gh_bedroom
-  
-  - platform: cast
-    name: "Basement Google Home"
     host: !secret gh_basement
-
   - platform: cast
-    name: "Bathroom Google Home"
-    host: !secret gh_bathroom
-
+    host: !secret gh_garage
   - platform: cast
-    name: "Guest Room Google Home"
-    host: !secret gh_guestroom
-
-  - platform: cast
-    name: "Main Floor Google Home"
     host: !secret gh_mainfloor
-  
   - platform: cast
-    name: "Basement Chromecast"
+    host: !secret gh_entryway
+  - platform: cast
+    host: !secret gh_bedroom
+  - platform: cast
+    host: !secret gh_guestroom
+  - platform: cast
+    host: !secret gh_bathroom
+  - platform: cast
+    host: !secret gh_office
+  - platform: cast
     host: !secret cc_basement
-
   - platform: cast
-    name: "Main Floor Chromecast"
     host: !secret cc_mainfloor
