@@ -1,0 +1,9 @@
+  - platform: generic
+    name: Main Floor Camera
+    username: !secret cameraUser
+    password: !secret cameraPass
+    authentication: basic
+    still_image_url: https://192.168.10.58/cgi-bin/currentpic.cgi
+    stream_source: rtsp://192.168.10.58:8554/unicast
+    verify_ssl: false
+

@@ -30,3 +30,16 @@
     min: 0
     max: 60
     step: 5
+
+  #MAIN FLOOR CAMERA
+  main_floor_pan:
+    name: Main Floor Pan Position
+    min: 0
+    max: 100
+    step: 1
+
+  main_floor_tilt:
+    name: Main Floor Tilt Position
+    min: 0
+    max: 100
+    step: 1

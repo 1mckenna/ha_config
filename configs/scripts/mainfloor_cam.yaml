@@ -1,0 +1,28 @@
+#Pan Mainfloor Camera
+  main_floor_camera_right:
+    sequence:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.main_floor_pan
+        value: "{{ states('input_number.main_floor_pan') | int + 5 }}"
+
+  main_floor_camera_left:
+    sequence:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.main_floor_pan
+        value: "{{ states('input_number.main_floor_pan') | int - 5 }}"
+
+  main_floor_camera_up:
+    sequence:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.main_floor_tilt
+        value: "{{ states('input_number.main_floor_tilt') | int + 5 }}"
+
+  main_floor_camera_down:
+    sequence:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.main_floor_tilt
+        value: "{{ states('input_number.main_floor_tilt') | int - 5 }}"

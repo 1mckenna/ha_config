@@ -1,0 +1,26 @@
+# Move Main Floor Camera when slider is moved
+- alias: 'Main Floor Camera Pan'
+  trigger:
+    platform: state
+    entity_id: input_number.main_floor_pan
+  condition:
+    - condition: template
+      value_template: "{{ states('input_number.main_floor_pan') | int != state_attr('cover.main_floor_camera_move_left_right', 'current_position') | int }}"
+  action:
+    - service: cover.set_cover_position
+      data_template:
+        entity_id: cover.main_floor_camera_move_left_right
+        position: "{{ states('input_number.main_floor_pan') | int }}"
+
+- alias: 'Main Floor Camera Tilt'
+  trigger:
+    platform: state
+    entity_id: input_number.main_floor_tilt
+  condition:
+    - condition: template
+      value_template: "{{ states('input_number.main_floor_tilt') | int != state_attr('cover.main_floor_camera_move_up_down', 'current_position') | int }}"
+  action:
+    service: cover.set_cover_position
+    data_template:
+      entity_id: cover.main_floor_camera_move_up_down
+      position: "{{ states('input_number.main_floor_tilt') | int }}"

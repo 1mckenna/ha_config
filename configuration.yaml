@@ -61,6 +61,12 @@ asuswrt: !include configs/asuswrt.yaml
 #Load Device Tracker
 device_tracker: !include configs/device_tracker.yaml
 
+#Load Camera Component
+camera: !include configs/camera.yaml
+
+#Load Switches Component
+switch: !include_dir_merge_list configs/switches
+
 # Checks for available updates
 updater:
 

@@ -1,0 +1,40 @@
+#Main Floor Camera Template Switches
+- platform: template
+  switches:
+    main_floor_camera_right:
+      icon_template: >
+        mdi:arrow-right-bold-outline
+      value_template: "{{ True }}"
+      turn_on:
+      turn_off:
+        - service: script.main_floor_camera_right
+
+- platform: template
+  switches:
+    main_floor_camera_left:
+      icon_template: >
+        mdi:arrow-left-bold-outline
+      value_template: "{{ True }}"
+      turn_on:
+      turn_off:
+        - service: script.main_floor_camera_left
+
+- platform: template
+  switches:
+    main_floor_camera_up:
+      icon_template: >
+        mdi:arrow-up-bold-outline
+      value_template: "{{ True }}"
+      turn_on:
+      turn_off:
+        - service: script.main_floor_camera_up
+
+- platform: template
+  switches:
+    main_floor_camera_down:
+      icon_template: >
+        mdi:arrow-down-bold-outline
+      value_template: "{{ True }}"
+      turn_on:
+      turn_off:
+        - service: script.main_floor_camera_down
