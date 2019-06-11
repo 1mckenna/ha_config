@@ -25,7 +25,7 @@
           - media_player.main_floor_home
           - media_player.basement_speaker
           - media_player.bathroom_speaker
-          - media_player.bedroom_home
+          - media_player.bedroom_speaker
         message: "Washing Machine Cycle Completed"
 
 #NOTIFY WHEN DRYER ENTERING WRINKLE GUARD MODE
@@ -53,7 +53,7 @@
           - media_player.main_floor_home
           - media_player.basement_speaker
           - media_player.bathroom_speaker
-          - media_player.bedroom_home
+          - media_player.bedroom_speaker
         message: "The dryer is in cool down mode, go fold the clothes"
 
 #NOTIFY WHEN DRYER HAS COMPLETED CYCLE
@@ -85,7 +85,7 @@
           - media_player.main_floor_home
           - media_player.basement_speaker
           - media_player.bathroom_speaker
-          - media_player.bedroom_home
+          - media_player.bedroom_speaker
         message: "Drying Cycle Complete"
 
 #TURN OFF LAUNDRY SWITCHES IF LAUNDRY HAS BEEN COMPLETED FOR AN HOUR

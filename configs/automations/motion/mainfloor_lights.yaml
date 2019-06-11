@@ -6,7 +6,7 @@
     to: 'on'
   condition:
     condition: state
-    entity_id: group.all_devices
+    entity_id: group.humans_group
     state: 'home'
   action:
     service: homeassistant.turn_on

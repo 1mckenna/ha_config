@@ -9,7 +9,7 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: group.all_devices
+        entity_id: group.humans_group
         state: 'home'
       - condition: numeric_state
         entity_id: sensor.pws_precip_1d

@@ -2,13 +2,13 @@
 - alias: Trash Day Reminder
   trigger:
     - platform: state
-      entity_id: group.all_devices
+      entity_id: group.humans_group
       to: 'home'
     - platform: time
       at: '16:00:00'
   condition:
     - condition: state
-      entity_id: group.all_devices
+      entity_id: group.humans_group
       state: 'home'
     - condition: time
       after: '16:00:00'
@@ -16,7 +16,7 @@
       weekday:
         - tue
     - condition: template
-      value_template: '{{ ((now().strftime("%W") | int) % 2) == 0 }}'
+      value_template: '{{ ((now().strftime("%W") | int) % 1) == 0 }}'
   action:
     service: notify.notify
     data:
@@ -28,16 +28,16 @@
 - alias: Recycling Day Reminder
   trigger:
     - platform: state
-      entity_id: group.all_devices
+      entity_id: group.humans_group
       to: 'home'
     - platform: time
       at: '16:00:00'
   condition:
     - condition: state
-      entity_id: group.all_devices
+      entity_id: group.humans_group
       state: 'home'
-#    - condition: time
-#      after: '16:00:00'
+    - condition: time
+      after: '16:00:00'
     - condition: time
       weekday:
         - tue
