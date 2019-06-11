@@ -18,3 +18,5 @@ automations.yaml
 .shopping_list.json
 ip_bans.yaml
 www/
+mopar_cookies.pickle
+custom_components/

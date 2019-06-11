@@ -36,5 +36,5 @@
     host: !secret gh_office
   - platform: cast
     host: !secret cc_basement
-  - platform: cast
-    host: !secret cc_mainfloor
+#  - platform: cast
+#    host: !secret cc_mainfloor

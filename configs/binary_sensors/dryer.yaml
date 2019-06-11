@@ -6,18 +6,18 @@
     dryer_running:
       friendly_name: 'Dryer Running'
       device_class: power
-      value_template: "{{ states('sensor.dryer_power') | round(0) > 10 }}"
+      value_template: "{{ states('sensor.dryer_power') | int | round(0) > 10 }}"
     dryer_cooldown:
       friendly_name: 'Dryer Cooldown'
       device_class: power
         #delay_off:
         #minutes: 5
       value_template: >-
-        {{ ((states('sensor.dryer_power') | round(0) <= 7) and
-           (states('sensor.dryer_power') | round(0) > 0))
+        {{ ((states('sensor.dryer_power') | int | round(0) <= 7) and
+           (states('sensor.dryer_power') | int | round(0) > 0))
            and (as_timestamp(now())-as_timestamp(states.binary_sensor.dryer_door.last_updated)) > 120
          }}
     dryer_door:
       friendly_name: 'Dryer Door'
       device_class: opening
-      value_template: "{{ states('sensor.dryer_power') | round(0) == 10 }}"
+      value_template: "{{ states('sensor.dryer_power') | int | round(0) == 10 }}"

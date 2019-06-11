@@ -114,3 +114,7 @@
   sensor.nut_ups_battery_runtime:
     friendly_name: "Time Left"
     unit_of_measurement: 'seconds'
+
+#MOPAR
+  switch.2019_dodge_charger_switch:
+    icon: mdi:engine
