@@ -19,4 +19,5 @@ automations.yaml
 ip_bans.yaml
 www/
 mopar_cookies.pickle
+gassistant_svcacct.json
 custom_components/

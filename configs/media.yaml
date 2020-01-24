@@ -17,24 +17,3 @@
     host: !secret samsung_host
     port: !secret samsung_port
     mac: !secret samsung_mac
-#Add Google Homes
-  - platform: cast
-    host: !secret gh_basement
-  - platform: cast
-    host: !secret gh_garage
-  - platform: cast
-    host: !secret gh_mainfloor
-  - platform: cast
-    host: !secret gh_entryway
-  - platform: cast
-    host: !secret gh_bedroom
-  - platform: cast
-    host: !secret gh_guestroom
-  - platform: cast
-    host: !secret gh_bathroom
-  - platform: cast
-    host: !secret gh_office
-  - platform: cast
-    host: !secret cc_basement
-#  - platform: cast
-#    host: !secret cc_mainfloor

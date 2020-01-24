@@ -59,7 +59,7 @@ automation: !include automations.yaml
 google_assistant: !include configs/gassistant.yaml
 
 #Google Home
-googlehome: !include configs/googlehome.yaml
+#googlehome: !include configs/googlehome.yaml
 
 #Load Asuswrt
 asuswrt: !include configs/asuswrt.yaml
@@ -107,6 +107,9 @@ logger: !include configs/logging.yaml
 
 #Load Media Config
 media_player: !include configs/media.yaml
+
+#Google Cast Devices
+cast: !include configs/cast.yaml
 
 #Load Sensor Config
 sensor: !include_dir_merge_list configs/sensors

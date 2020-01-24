@@ -25,8 +25,8 @@
   sensors:
     bedroom_admin_gh_rssi:
       value_template: >-
-        {% if is_state("device_tracker.192_168_10_229_d4_63_c6_5d_0c_73", "home") %}
-          {{state_attr('device_tracker.192_168_10_229_d4_63_c6_5d_0c_73', 'rssi')}}
+        {% if is_state("device_tracker.192_168_10_109_d4_63_c6_5d_0c_73", "home") %}
+          {{state_attr('device_tracker.192_168_10_109_d4_63_c6_5d_0c_73', 'rssi')}}
         {% else %}
           -99
         {% endif %}

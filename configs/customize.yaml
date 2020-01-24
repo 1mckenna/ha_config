@@ -91,7 +91,7 @@
     icon: mdi:lamp
   light.office_lamp:
     icon: mdi:lamp
-  device_tracker.galaxynote9:
+  device_tracker.galaxy_note10:
     icon: mdi:account-heart
   binary_sensor.washing_machine:
     icon: mdi:washing-machine

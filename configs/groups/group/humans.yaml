@@ -5,4 +5,4 @@ humans_group:
   view: no
   entities:
     - device_tracker.d463c65d0c74
-    - device_tracker.galaxynote9
+    - device_tracker.galaxy_note10

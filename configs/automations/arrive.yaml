@@ -1,7 +1,7 @@
 - alias: 'Admin arrived home'
   condition:
    - condition: state
-     entity_id: device_tracker.galaxynote9
+     entity_id: device_tracker.galaxy_note10
      state: 'not_home'
   trigger:
     platform: state
@@ -21,13 +21,13 @@
       state: 'not_home'
   trigger:
     platform: state
-    entity_id: device_tracker.galaxynote9
+    entity_id: device_tracker.galaxy_note10
     from: 'not_home'
     to: 'home'
   action:
     service: notify.notify
     data_template:
       message: >
-        {{ states.device_tracker.galaxynote9.attributes.friendly_name }} arrived home
+        {{ states.device_tracker.galaxy_note10.attributes.friendly_name }} arrived home
       target: !secret adminPhone
 

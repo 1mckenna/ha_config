@@ -24,9 +24,14 @@
       track_devices: true
       rssi_threshold: -99
       #device_types: 3
+    - host: !secret gh_backroom
+      track_alarms: true
+      track_devices: false
+      rssi_threshold: -99
+      #device_types: 3
     - host: !secret gh_guestroom
       track_alarms: true
-      track_devices: true
+      track_devices: false
       rssi_threshold: -67
       #device_types: 3
     - host: !secret gh_bathroom
@@ -36,6 +41,6 @@
       #device_types: 3
     - host: !secret gh_office
       track_alarms: true
-      track_devices: true
+      track_devices: false
       rssi_threshold: -67
       #device_types: 3

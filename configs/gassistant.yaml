@@ -1,12 +1,56 @@
 project_id: !secret ga_project_id
-api_key: !secret ga_api_key
+secure_devices_pin: !secret ga_device_pin
+service_account: !include ../gassistant_svcacct.json
+report_state: true
 exposed_domains:
   - switch
   - light
   - fan
   - scene
+  - lock
 entity_config:
   switch.ups_outlet_switch:
     expose: false
   switch.bedroom_light_switch:
     name: Bedroom Fan Light
+  lock.front_door_lock_locked:
+    name: Front Door Lock
+  cover.garage_door_barrier_state_label:
+    name: Garage Door
+    expose: true
+  switch.2019_dodge_charger_switch:
+    expose: false
+  lock.2019_dodge_charger_lock:
+    expose: false
+  switch.camera_blue_led:
+    expose: false
+  switch.camera_h264_rtsp_server:
+    expose: false
+  switch.camera_ir_filter:
+    expose: false
+  switch.camera_ir_led:
+    expose: false
+  switch.camera_mjpeg_rtsp_server:
+    expose: false
+  switch.main_floor_camera_motion_detection:
+    expose: false
+  switch.main_floor_camera_motion_send_mail:
+    expose: false
+  switch.main_floor_camera_motion_send_telegram:
+    expose: false
+  switch.main_floor_camera_motion_tracking:
+    expose: false
+  switch.camera_night_mode:
+    expose: false
+  switch.camera_night_mode_auto:
+    expose: false
+  switch.camera_yellow_led:
+    expose: false
+  switch.main_floor_camera_down:
+    expose: false
+  switch.main_floor_camera_left:
+    expose: false
+  switch.main_floor_camera_right:
+    expose: false
+  switch.main_floor_camera_up:
+    expose: false

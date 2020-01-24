@@ -565,7 +565,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id:  device_tracker.galaxynote9
+    entity_id:  device_tracker.galaxy_note10
     to: 'not_home'
   action:
     - service: input_select.select_option
@@ -602,7 +602,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id:  device_tracker.galaxynote9
+    entity_id:  device_tracker.galaxy_note10
     to: 'home'
   action:
     - service: input_select.select_option

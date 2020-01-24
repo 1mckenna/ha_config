@@ -13,7 +13,7 @@
       friendly_name: 'Fade-in start time'
       value_template: >
         {% if states.sensor.wakeup_alarm_time and states.input_number.wakeup_duration %}
-        {% if states.sensor.wakeup_alarm.time.state is defined %}
+        {% if states.sensor.wakeup_alarm_time.state is defined %}
         {% set alarmtime = states.sensor.wakeup_alarm_time.state %}
         {% else %}
         {% set alarmtime = "6:00" %}

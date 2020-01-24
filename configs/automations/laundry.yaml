@@ -8,11 +8,11 @@
     to: 'off'
   action:
     - service_template: >
-        {% if (is_state('device_tracker.d463c65d0c74', 'home')) and (is_state('device_tracker.galaxynote9', 'home'))  %}
+        {% if (is_state('device_tracker.d463c65d0c74', 'home')) and (is_state('device_tracker.galaxy_note10', 'home'))  %}
           notify.both_phones
         {% elif is_state('device_tracker.d463c65d0c74', 'home') %}
           notify.admin_phone
-        {% elif is_state('device_tracker.galaxynote9', 'home') %}
+        {% elif is_state('device_tracker.galaxy_note10', 'home') %}
           notify.user_phone
         {% endif %}
       data_template:
@@ -36,11 +36,11 @@
     to: 'on'
   action:
     - service_template: >
-        {% if (is_state('device_tracker.d463c65d0c74', 'home')) and (is_state('device_tracker.galaxynote9', 'home'))  %}
+        {% if (is_state('device_tracker.d463c65d0c74', 'home')) and (is_state('device_tracker.galaxy_note10', 'home'))  %}
           notify.both_phones
         {% elif is_state('device_tracker.d463c65d0c74', 'home') %}
           notify.admin_phone
-        {% elif is_state('device_tracker.galaxynote9', 'home') %}
+        {% elif is_state('device_tracker.galaxy_note10', 'home') %}
           notify.user_phone
         {% endif %}
       data_template:
@@ -68,11 +68,11 @@
     state: 'off'
   action:
     - service_template: >
-        {% if (is_state('device_tracker.d463c65d0c74', 'home')) and (is_state('device_tracker.galaxynote9', 'home'))  %}
+        {% if (is_state('device_tracker.d463c65d0c74', 'home')) and (is_state('device_tracker.galaxy_note10', 'home'))  %}
           notify.both_phones
         {% elif is_state('device_tracker.d463c65d0c74', 'home') %}
           notify.admin_phone
-        {% elif is_state('device_tracker.galaxynote9', 'home') %}
+        {% elif is_state('device_tracker.galaxy_note10', 'home') %}
           notify.user_phone
         {% endif %}
       data_template:
