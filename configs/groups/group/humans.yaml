@@ -1,8 +1,6 @@
 #Humans Group
 humans_group:
   name: Humans Group
-  control: hidden
-  view: no
   entities:
-    - device_tracker.d463c65d0c74
-    - device_tracker.galaxy_note10
+    - person.logan
+    - person.jennifer

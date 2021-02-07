@@ -1,0 +1,9 @@
+##########################################
+#SAMSUNGTV YAML CONFIGURATION FILE
+##########################################
+
+# Basement TV
+  - host: !secret samsung_host
+    name: "Basement TV"
+    turn_on_action:
+      - service: rest_command.basementtv_wake_on_lan

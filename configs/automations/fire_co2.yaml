@@ -5,12 +5,11 @@
     to: 'Fire'
   action:
     - service: homeassistant.turn_on
-      entity_id: group.all_switches,group.all_lights 
-    - service: notify.notify
+      entity_id: group.emergency_lights
+    - service: notify.both_phones
       data_template:
         message: >
           Fire detected by {{ trigger.to_state.attributes.friendly_name }}
-        target: [!secret adminPhone, !secret userPhone]
 
 - alias: 'CO Detected'
   trigger:
@@ -19,12 +18,11 @@
     to: 'CO'
   action:
     - service: homeassistant.turn_on
-      entity_id: group.all_switches,group.all_lights 
-    - service: notify.notify
+      entity_id: group.emergency_lights
+    - service: notify.both_phones
       data_template:
         message: >
           Carbon Monoxide detected by {{ trigger.to_state.attributes.friendly_name }}
-        target: [!secret adminPhone, !secret userPhone]
 
 - alias: 'Smoke Detector Testing Detected'
   trigger:
@@ -32,8 +30,7 @@
     entity_id: sensor.entryway_smoke_co2, sensor.basement_smoke_co2, sensor.upstairs_smoke_co2
     to: 'Testing'
   action:
-    - service: notify.notify
+    - service: notify.both_phones
       data_template:
         message: >
           Testing detected on {{ trigger.to_state.attributes.friendly_name }}
-        target: [!secret adminPhone, !secret userPhone]

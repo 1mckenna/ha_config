@@ -1,0 +1,19 @@
+#Emergency Lights Group
+emergency_lights:
+  name: Emergency Lights
+  entities:
+    - light.basement_light_level
+    - light.bedroom_lamps
+    - light.guest_bedroom_lamp
+    - light.kitchen_light_level
+    - light.office_lamp
+    - light.office_light_level
+    - switch.bedroom_light_switch
+    - switch.garage_rear_light_switch
+    - switch.garage_work_light_switch
+    - switch.guest_room_light_switch
+    - switch.outlet_1_switch
+    - switch.outlet_2_switch
+    - switch.patio_light_switch
+    - switch.patio_side_light_switch
+    - switch.porch_light_switch

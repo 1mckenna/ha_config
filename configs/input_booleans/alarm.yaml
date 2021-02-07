@@ -6,4 +6,4 @@
   wakeup_weekends:
     name: 'Weekend'
     icon: mdi:alarm-check
-    initial: off
+    initial: on

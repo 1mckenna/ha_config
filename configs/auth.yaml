@@ -1,8 +1,1 @@
    - type: homeassistant
-   - type: trusted_networks
-     trusted_networks:
-       - 192.168.10.0/24
-     trusted_users:
-       192.168.10.0/24:
-         - !secret user1
-         - !secret user2

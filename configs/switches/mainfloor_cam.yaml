@@ -7,7 +7,9 @@
       value_template: "{{ True }}"
       turn_on:
       turn_off:
-        - service: script.main_floor_camera_right
+        service: script.main_floor_camera_right
+        data:
+          entity_id: input_number.main_floor_pan
 
 - platform: template
   switches:
@@ -17,7 +19,10 @@
       value_template: "{{ True }}"
       turn_on:
       turn_off:
-        - service: script.main_floor_camera_left
+        service: script.main_floor_camera_left
+        data:
+          entity_id: input_number.main_floor_pan
+
 
 - platform: template
   switches:
@@ -27,7 +32,10 @@
       value_template: "{{ True }}"
       turn_on:
       turn_off:
-        - service: script.main_floor_camera_up
+        service: script.main_floor_camera_up
+        data:
+          entity_id: input_number.main_floor_tilt
+
 
 - platform: template
   switches:
@@ -37,4 +45,7 @@
       value_template: "{{ True }}"
       turn_on:
       turn_off:
-        - service: script.main_floor_camera_down
+        service: script.main_floor_camera_down
+        data:
+          entity_id: input_number.main_floor_tilt
+

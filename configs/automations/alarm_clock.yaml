@@ -1,5 +1,4 @@
 - alias: 'WakeUp Light Bedroom'
-  hide_entity: false
   trigger:
     platform: template
     value_template: '{{ states.sensor.time.state == states.sensor.wakeup_start_time_lights.state }}'

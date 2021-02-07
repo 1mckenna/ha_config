@@ -4,4 +4,4 @@
     - !secret proxy_ip
     - !secret proxy_ip2
   ip_ban_enabled: true
-  login_attempts_threshold: 3
+  login_attempts_threshold: 6

@@ -3,14 +3,13 @@
 - alias: 'House too COLD'
   trigger:
     platform: numeric_state
-    entity_id: sensor.thermostat_temperature
+    entity_id: sensor.thermostat_air_temperature
     below: '59'
   action:
-    - service: notify.notify
+    - service: notify.both_phones
       data_template:
         title: Check the Furnace
         message: >
           House Temperature is too cold
 
-          Current Temp: {{ states.sensor.thermostat_temperature.state }}
-        target: [!secret adminPhone, !secret userPhone]
+          Current Temp: {{ states.sensor.thermostat_air_temperature.state }}

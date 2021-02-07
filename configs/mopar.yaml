@@ -1,3 +1,0 @@
-  username: !secret moparUser
-  password: !secret moparPass
-  pin: !secret moparPIN

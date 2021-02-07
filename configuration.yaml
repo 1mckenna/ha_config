@@ -7,16 +7,22 @@ homeassistant:
   time_zone: America/Chicago
   customize: !include configs/customize.yaml 
   auth_providers: !include configs/auth.yaml
+  external_url: "https://hass.mckenna.duckdns.org"
+  internal_url: "http://192.168.10.119:8123"
   packages: !include_dir_named packages
+
+#Enable Mobile App
+mobile_app:
+discovery:
+
+#Person
+person:
 
 #SSDP Discovery
 ssdp:
 
 #Zeroconf Discovery
 zeroconf:
-
-# Enables the frontend
-frontend: !include configs/frontend.yaml
 
 # Enables configuration UI
 config:
@@ -44,10 +50,6 @@ shell_command: !include configs/shell_commands.yaml
 
 #Load Cover
 cover:
-  platform: zwave
-
-#Load Zwave
-zwave: !include configs/zwave.yaml
 
 #LOAD Manually created automations
 automation old: !include_dir_merge_list configs/automations
@@ -57,9 +59,6 @@ automation: !include automations.yaml
 
 #Load Google Assistant
 google_assistant: !include configs/gassistant.yaml
-
-#Google Home
-#googlehome: !include configs/googlehome.yaml
 
 #Load Asuswrt
 asuswrt: !include configs/asuswrt.yaml
@@ -72,9 +71,6 @@ camera: !include configs/camera.yaml
 
 #Load Switches Component
 switch: !include_dir_merge_list configs/switches
-
-#Load Mopar Component
-mopar: !include configs/mopar.yaml
 
 # Checks for available updates
 updater:
@@ -108,8 +104,14 @@ logger: !include configs/logging.yaml
 #Load Media Config
 media_player: !include configs/media.yaml
 
+#SamsungTV
+samsungtv: !include configs/samsungtv.yaml
+
+#REST Commands
+rest_command: !include configs/rest.yaml
+
 #Google Cast Devices
-cast: !include configs/cast.yaml
+cast:
 
 #Load Sensor Config
 sensor: !include_dir_merge_list configs/sensors
@@ -130,7 +132,7 @@ script: !include_dir_merge_named configs/scripts
 weather: !include configs/weather.yaml
 
 #LOAD SLIDERS
-input_number: !include configs/input_slider.yaml
+input_number: !include_dir_merge_named configs/input_numbers
 
 #LOAD INPUT BOOLEANS
 input_boolean: !include_dir_merge_named configs/input_booleans
@@ -144,9 +146,3 @@ recorder: !include configs/recorder.yaml
 #Setup Influx for use with Grafana
 influxdb: !include configs/influxdb.yaml
 
-#Setup Zwave network Mesh Graph
-panel_custom:
-  - name: zwavegraph2
-    sidebar_title: ZWave Graph
-    sidebar_icon: mdi:access-point-network
-    url_path: zwave

@@ -1,0 +1,2 @@
+  basementtv_wake_on_lan:
+    url: !secret wol_basementtv_url

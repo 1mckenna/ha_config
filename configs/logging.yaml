@@ -6,6 +6,7 @@
   default: error
   logs:
     homeassistant.components.http.ban: warning
+    custom_components.samsungtv_custom: debug
     #homeassistant.components.media_player.samsungtv: debug
     #homeassistant.components.device_tracker: debug
     #homeassistant.components.mqtt: debug

@@ -11,7 +11,7 @@
       - condition: template
         value_template: '{{ states.sensor.fail2ban_traefikauth.state != "None" }}'
   action:
-    - service: notify.notify
+    - service: notify.admin
       data_template:
         message: >
           Failed Login! {{ now().strftime("%h %d, %Y at %H:%M:%S") }}
@@ -21,4 +21,3 @@
           {% if states.sensor.fail2ban_traefikauth.state != "None" %}
             Web Attempt(s) from {{states.sensor.fail2ban_traefikauth.state}}
           {% endif %}
-        target: !secret adminPhone

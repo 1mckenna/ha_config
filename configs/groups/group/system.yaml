@@ -1,9 +1,0 @@
-#System Automation Group
-system_autos_group:
-  name: System
-  control: hidden
-  view: no
-  entities:
-    - automation.ssl_expiry_notification
-    - automation.notify_on_failed_login
-

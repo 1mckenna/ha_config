@@ -1,5 +1,6 @@
 #TURN OFF EVERYTHING WHEN WE LEAVE THE HOUSE
 - alias: 'Away Mode'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: group.humans_group
@@ -10,10 +11,11 @@
     state: 'off'
   action:
     service: homeassistant.turn_off
-    entity_id: group.all_fans,group.all_lights,switch.bedroom_light_switch,switch.dryer_switch,switch.guest_room_light_switch,switch.outlet_1_switch,switch.outlet_2_switch,switch.porch_light_switch,switch.washing_machine_switch,switch.garage_rear_light_switch,switch.garage_work_light_switch,switch.patio_light_switch,switch.patio_side_light_switch
+    entity_id: light.basement_light_level,light.office_light_level,light.kitchen_light_level,light.bedroom_lamps,light.guest_bedroom_lamp,light.office_lamp,fan.bedroom_fan_level,switch.bedroom_light_switch,switch.dryer_switch,switch.guest_room_light_switch,switch.outlet_1_switch,switch.outlet_2_switch,switch.porch_light_switch,switch.washing_machine_switch,switch.garage_rear_light_switch,switch.garage_work_light_switch,switch.patio_light_switch,switch.patio_side_light_switch
 
 #DONT TURN OFF LAUNDRY IF IT WAS ON WHEN WE LEFT HOME    
 - alias: 'Laundry Away Mode'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: group.humans_group
@@ -24,4 +26,4 @@
     state: 'on'
   action:
     service: homeassistant.turn_off
-    entity_id: group.all_fans,group.all_lights,switch.bedroom_light_switch,switch.guest_room_light_switch,switch.outlet_1_switch,switch.outlet_2_switch,switch.porch_light_switch,switch.garage_rear_light_switch,switch.garage_work_light_switch,switch.patio_light_switch,switch.patio_side_light_switch
+    entity_id: light.basement_light_level,light.office_light_level,light.kitchen_light_level,light.bedroom_lamps,light.guest_bedroom_lamp,light.office_lamp,fan.bedroom_fan_level,switch.bedroom_light_switch,switch.guest_room_light_switch,switch.outlet_1_switch,switch.outlet_2_switch,switch.porch_light_switch,switch.garage_rear_light_switch,switch.garage_work_light_switch,switch.patio_light_switch,switch.patio_side_light_switch

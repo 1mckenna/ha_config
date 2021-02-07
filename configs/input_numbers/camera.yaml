@@ -1,0 +1,14 @@
+  #MAIN FLOOR CAMERA
+  main_floor_pan:
+    name: Main Floor Pan Position
+    initial: 50
+    min: 0
+    max: 100
+    step: 1
+
+  main_floor_tilt:
+    name: Main Floor Tilt Position
+    initial: 50
+    min: 0
+    max: 100
+    step: 1

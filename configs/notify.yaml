@@ -5,25 +5,17 @@
     vapid_email: !secret vapEmail
 
   - platform: group
-    name: admin_phone
-    services:
-      - service: notify
-        data:
-          target: !secret adminPhone
-
-  - platform: group
-    name: user_phone
-    services:
-      - service: notify
-        data:
-          target: !secret userPhone
-
-  - platform: group
     name: both_phones
     services:
-      - service: notify
-        data:
-          target: !secret adminPhone
-      - service: notify
-        data:
-          target: !secret userPhone
+      - service: mobile_app_pixel_4a_5g
+      - service: mobile_app_sm_n986u1
+
+  - platform: group
+    name: admin
+    services:
+      - service: mobile_app_pixel_4a_5g
+
+  - platform: group
+    name: user
+    services:
+      - service: mobile_app_sm_n986u1

@@ -1,75 +1,8 @@
-  sensor.basement_sensor_temperature:
-    device_class: temperature
-  sensor.basement_sensor_luminance:
-    device_class: illuminance
-  sensor.basement_sensor_relative_humidity:
-    device_class: humidity
-  sensor.main_floor_sensor_temperature:
-    device_class: temperature
-  sensor.main_floor_sensor_luminance:
-    device_class: illuminance
-  sensor.main_floor_sensor_relative_humidity:
-    device_class: humidity
-  sensor.entryway_sensor_temperature:
-    device_class: temperature
-  sensor.entryway_sensor_luminance:
-    device_class: illuminance
-  sensor.entryway_sensor_relative_humidity:
-    device_class: humidity
-  sensor.garage_sensor_luminance:
-    device_class: illuminance
-  sensor.garage_sensor_relative_humidity:
-    device_class: humidity
-  sensor.garage_sensor_temperature:
-    device_class: temperature
-  sensor.guest_room_sensor_luminance:
-    device_class: illuminance
-  sensor.guest_room_sensor_relative_humidity:
-    device_class: humidity
-  sensor.guest_room_sensor_temperature:
-    device_class: temperature
-  sensor.bedroom_sensor_luminance:
-    device_class: illuminance
-  sensor.bedroom_sensor_relative_humidity:
-    device_class: humidity
-  sensor.bedroom_sensor_temperature:
-    device_class: temperature
-  sensor.office_sensor_luminance:
-    device_class: illuminance
-  sensor.office_sensor_relative_humidity:
-    device_class: humidity
-  sensor.office_sensor_temperature:
-    device_class: temperature
-  climate.thermostat_heating_1:
-    friendly_name: Heating
-  climate.thermostat_cooling_1:
-    friendly_name: Cooling
+ #OUTLETS
   switch.outlet_1_switch:
     friendly_name: Main Level Outlet 1
   switch.outlet_2_switch:
     friendly_name: Main Level Outlet 2
-  fan.bedroom_fan_level:
-    friendly_name: Bedroom Fan
-  cover.garage_door_barrier_state_label:
-    friendly_name: Garage Door
-  group.all_switches:
-    hidden: false
-    friendly_name: Switches
-  group.all_covers:
-    hidden: false
-    friendly_name: Garage Door Opener
-  group.all_fans:
-    hidden: false
-    friendly_name: Fans
-  group.all_devices:
-    hidden: false
-    friendly_name: Users
-  group.all_lights:
-    hidden: false
-    friendly_name: Smart Bulbs
-  group.all_automations:
-    hidden: false
-    friendly_name: Automations
  #ALARM
   sensor.wakeup_alarm_time:
     icon: mdi:timer
@@ -84,6 +17,7 @@
     friendly_name: "Upstairs Smoke Detector"          
   sensor.entryway_smoke_co2:
     friendly_name: "Entryway Smoke Detector"
+ #LIGHTS
   light.bedroom_lamps:
     icon: mdi:lamp
   light.guest_bedroom_lamp:
@@ -91,8 +25,13 @@
     icon: mdi:lamp
   light.office_lamp:
     icon: mdi:lamp
-  device_tracker.galaxy_note10:
-    icon: mdi:account-heart
+  light.basement_light_level:
+    friendly_name: "Basement Light"
+  light.kitchen_light_level:
+    friendly_name: "Kitchen Light"
+  light.office_light_level:
+    friendly_name: "Office Light"
+ #WASHING MACHINE
   binary_sensor.washing_machine:
     icon: mdi:washing-machine
   binary_sensor.dryer_running:
@@ -114,7 +53,3 @@
   sensor.nut_ups_battery_runtime:
     friendly_name: "Time Left"
     unit_of_measurement: 'seconds'
-
-#MOPAR
-  switch.2019_dodge_charger_switch:
-    icon: mdi:engine

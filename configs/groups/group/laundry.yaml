@@ -1,8 +1,6 @@
 #Laundry Group
 laundry:
   name: Laundry
-  control: hidden
-  view: no
   entities:
     - binary_sensor.washing_machine
     - binary_sensor.dryer_running

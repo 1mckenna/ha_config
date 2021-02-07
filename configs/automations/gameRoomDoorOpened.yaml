@@ -1,7 +1,7 @@
 - alias: 'Game Room Door Opened At Night'
   trigger:
     platform: state
-    entity_id: binary_sensor.game_room_main_door_state, binary_sensor.game_room_side_door_state
+    entity_id: binary_sensor.game_room_main_door_access_control_door_window_open, binary_sensor.game_room_side_door_access_control_door_window_open
     to: 'on'
   condition:
     - condition: sun
@@ -14,7 +14,7 @@
 - alias: 'Game Room Door Closed At Night'
   trigger:
     platform: state
-    entity_id: binary_sensor.game_room_main_door_state, binary_sensor.game_room_side_door_state
+    entity_id: binary_sensor.game_room_main_door_access_control_door_window_open, binary_sensor.game_room_side_door_access_control_door_window_open
     to: 'off'
     for:
       minutes: 3
@@ -35,10 +35,10 @@
     condition: or
     conditions:
       - condition: state
-        entity_id: binary_sensor.game_room_main_door_state
+        entity_id: binary_sensor.game_room_main_door_access_control_door_window_open
         state: 'on'
       - condition: state
-        entity_id: binary_sensor.game_room_side_door_state
+        entity_id: binary_sensor.game_room_side_door_access_control_door_window_open
         state: 'on'
   action:
     - service: homeassistant.turn_on

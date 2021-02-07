@@ -1,33 +1,31 @@
 - alias: 'Admin arrived home'
   condition:
    - condition: state
-     entity_id: device_tracker.galaxy_note10
+     entity_id: person.jennifer
      state: 'not_home'
   trigger:
     platform: state
-    entity_id: device_tracker.d463c65d0c74
+    entity_id: person.logan
     from: 'not_home'
     to: 'home'
   action:
-    service: notify.notify
+    service: notify.user
     data_template:
       message: >
-        {{ states.device_tracker.d463c65d0c74.attributes.friendly_name }} arrived home
-      target: !secret userPhone 
+        {{ states.person.logan.attributes.friendly_name }} arrived home
 - alias: 'User arrived home'
-  condition:
-    - condition: state
-      entity_id: device_tracker.d463c65d0c74
-      state: 'not_home'
+#  condition:
+#    - condition: state
+#      entity_id: person.logan
+#      state: 'not_home'
   trigger:
     platform: state
-    entity_id: device_tracker.galaxy_note10
+    entity_id: person.jennifer
     from: 'not_home'
     to: 'home'
   action:
-    service: notify.notify
+    service: notify.admin
     data_template:
       message: >
-        {{ states.device_tracker.galaxy_note10.attributes.friendly_name }} arrived home
-      target: !secret adminPhone
+        {{ states.person.jennifer.attributes.friendly_name }} arrived home
 

@@ -4,7 +4,7 @@
     entity_id: sensor.marilyn_status
     from: 'Optimal'
   action:
-    - service: notify.notify
+    - service: notify.user
       data_template:
         title: Check {{ trigger.to_state.attributes.friendly_name }}
         message: >
@@ -12,4 +12,3 @@
 
           {%set s = trigger.to_state.entity_id | replace("status","moisture") %}
           Moisture Level: {{ states(s) }}%
-        target: !secret userPhone

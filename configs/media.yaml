@@ -2,18 +2,10 @@
 #MEDIA YAML CONFIGURATION FILE media.yaml
 ##########################################
 
-
 # Add Onkyo Reciever
   - platform: onkyo
     host: !secret onkyo_host
     name: "TX-RZ800"
     sources:
-      strm-box: "FireTV"
-      video2: "Basement Chromecast"
+      strm-box: "ShieldTV"
       dvd: "PS3"
-#Add Basement TV
-  - platform: samsungtv
-    name: "Basement TV"
-    host: !secret samsung_host
-    port: !secret samsung_port
-    mac: !secret samsung_mac

@@ -1,7 +1,7 @@
 - alias: 'Garage Door Opened At Night'
   trigger:
     platform: state
-    entity_id: cover.garage_door_barrier_state_label
+    entity_id: cover.garage_door_barrier_state
     to: 'open'
   condition:
     - condition: sun
